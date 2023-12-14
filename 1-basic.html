@@ -14,10 +14,16 @@
       await fetch('https://fakeresponder.com/?sleep=3000')
         .then(response => response.text())
         .then(resourceText => {
-          responseTextarea.value = resourceText;
+          let text = '';
+          text += 'Response is got at ' + new Date().toLocaleString() + '\n';
+          text += resourceText;
+          responseTextarea.value = text;
         })
         .catch(error => {
-          responseTextarea.value = error.toString();
+          let text = '';
+          text += 'Error is got at ' + new Date().toLocaleString() + '\n';
+          text += error.toString();
+          responseTextarea.value = text;
         });
     }
     
