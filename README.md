@@ -59,3 +59,7 @@ https://github.com/user-attachments/assets/3f560784-3407-4a45-b7a5-822acb20f237
   - If the error is thrown, catch it with `try-catch`.
   - Then, retry calling `fetch` after a certain period of time.
   - If the error is thrown multiple times, it will throw the error to the upper frame and end the retry.
+
+## References
+
+- [fetch の中断と Back/Forward Cache からの復元で発生する奇妙な現象について - mizdra's blog](https://www.mizdra.net/entry/2023/12/15/012937)
