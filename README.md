@@ -63,3 +63,8 @@ https://github.com/user-attachments/assets/3f560784-3407-4a45-b7a5-822acb20f237
 ## References
 
 - [fetch の中断と Back/Forward Cache からの復元で発生する奇妙な現象について - mizdra's blog](https://www.mizdra.net/entry/2023/12/15/012937)
+
+## License
+
+CC0-1.0
+
