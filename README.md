@@ -37,3 +37,23 @@ https://github.com/user-attachments/assets/bd7ffa39-2f5f-46a9-b33c-a0d48b9b0797
 ## Safari 18.0 (20619.1.26.31.6) / macOS 15.0
 
 https://github.com/user-attachments/assets/3f560784-3407-4a45-b7a5-822acb20f237
+
+## Additional information
+
+- The behavior of Firefox and Safari can sometimes lead to serious problems.
+  - Imagine a case where a fetch is being performed while rendering the React component tree, and that fetch is interrupted by a page transition.
+  - If the user goes back to the browser, an error screen may be displayed.
+  - This is because a `TypeError` is caught in the top-level [`<Suspense>`](https://ja.react.dev/reference/react/Suspense) component of the page, and the entire page switches to the error screen.
+- `TypeError` has no stack trace.
+  - I don't know if this is a bug or not.
+- `TypeError` may be reported to error reporters such as [Sentry](https://sentry.io/welcome/).
+  - At @mizdra's company, several Sentry projects have received the error.
+  - The characteristics of the error are as follows:
+    - The name/message of the error is `TypeError: Load failed` or `TypeError: NetworkError when attempting to fetch resource`. 
+    - The stack trace is empty.
+    - The page where the error occurred is b/f cacheable.
+    - [Breadcrumbs](https://docs.sentry.io/product/issues/issue-details/breadcrumbs/) show that the page was navigated to during fetching.
+- An effective workaround for this problem is to retry the fetch.
+  - If the error is thrown, catch it with `try-catch`.
+  - Then, retry calling `fetch` after a certain period of time.
+  - If the error is thrown multiple times, it will throw the error to the upper frame and end the retry.
