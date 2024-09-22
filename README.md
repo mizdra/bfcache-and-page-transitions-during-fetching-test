@@ -4,7 +4,7 @@ See [#1](https://github.com/mizdra/bfcache-browser-compatibility-test/issues/1).
 
 ## Setup
 
-```
-npx serve .
-open http://localhost:3000
+```bash
+node server.mjs
+open http://localhost:3000/1-basic.html
 ```

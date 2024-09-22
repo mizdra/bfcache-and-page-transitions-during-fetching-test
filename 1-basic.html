@@ -11,7 +11,7 @@
 
     async function fetchResource() {
       responseTextarea.value = 'Fetching...';
-      await fetch('https://fakeresponder.com/?sleep=3000')
+      await fetch('http://localhost:3000/api/slow-response')
         .then(response => response.text())
         .then(resourceText => {
           let text = '';
