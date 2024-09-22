@@ -20,9 +20,12 @@
           responseTextarea.value = text;
         })
         .catch(error => {
+          console.error(error)
+          console.log(error.stack)
           let text = '';
           text += 'Error is got at ' + new Date().toLocaleString() + '\n';
-          text += error.toString();
+          text += error.toString() + '\n';
+          text += `stack: ${error.stack}`;
           responseTextarea.value = text;
         });
     }
