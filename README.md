@@ -9,7 +9,7 @@ npx serve .
 open http://localhost:3000
 ```
 
-## The comparison of the behavior
+## Summary
 
 Comparison steps:
 
@@ -17,7 +17,7 @@ Comparison steps:
 2. Click `Fetch resource and transit to another page` button
 3. Browser back to the previous page
 
-Summary of the behavior:
+The behavior of each browser is as follows:
 
 - Chrome
   - Fetching continues even during the page transition. Fetching is not aborted.
@@ -25,6 +25,8 @@ Summary of the behavior:
 - Firefox and Safari
   - The fetch is aborted by the page transitions, and the `TypeError` is thrown.
   - If you go back to the previous page, the page will resume from after the `TypeError` is thrown.
+
+## Recordings
 
 ### Chrome 129.0.6668.59（Official Build） （arm64） / macOS 15.0
 
