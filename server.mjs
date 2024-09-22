@@ -12,21 +12,21 @@ const server = http.createServer(async (req, res) => {
   // handle /1-fetch.html
   if (req.url === '/1-fetch.html') {
     const html = await readFile('./1-fetch.html', 'utf-8');
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.writeHead(200, { 'Content-Type': 'text/html', 'Cache-Control': 'no-cache, private' });
     res.end(html);
     return;
   }
   // handle /2-video.html
   if (req.url === '/2-video.html') {
     const html = await readFile('./2-video.html', 'utf-8');
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.writeHead(200, { 'Content-Type': 'text/html', 'Cache-Control': 'no-cache, private' });
     res.end(html);
     return;
   }
   // handle /flower.webm
   if (req.url === '/flower.webm') {
     const video = await readFile('./flower.webm');
-    res.writeHead(200, { 'Content-Type': 'video/webm' });
+    res.writeHead(200, { 'Content-Type': 'video/webm', 'Cache-Control': 'no-cache, private' });
     res.end(video);
     return;
   }
