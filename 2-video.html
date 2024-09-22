@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="module" defer>
+    /** @type {HTMLVideoElement} */
+    const video = document.getElementById('video');
+    const playVideoButton = document.getElementById('play-video-button');
+    const playVideoAndTransitButton = document.getElementById('play-video-and-transit-button');
+    const responseTextarea = document.getElementById('response-textarea');
+
+    async function playVideo() {
+      responseTextarea.value = 'Playing...';
+      video.play()
+      video.addEventListener('error', (error) => {
+        console.error(error)
+        console.log(error.stack)
+        let text = '';
+        text += 'Error is got at ' + new Date().toLocaleString() + '\n';
+        text += error.toString() + '\n';
+        text += `stack: ${error.stack}`;
+        responseTextarea.value = text;
+      });
+      video.addEventListener('pause', () => {
+        let text = '';
+        text += 'Paused\n';
+        responseTextarea.value = text;
+      });
+      video.addEventListener('abort', () => {
+        let text = '';
+        text += 'Abort\n';
+        responseTextarea.value = text;
+      });
+    }
+    
+    playVideoButton.addEventListener('click', () => {
+      playVideo();
+    });
+    playVideoAndTransitButton.addEventListener('click', () => {
+      playVideo();
+      location.href = 'https://example.com';
+    });
+  </script>
+  <style>
+    #response-textarea {
+      width: 40em;
+      height: 15em;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" src="/flower.webm" loop muted controls></video>
+  <div>
+    <button id="play-video-button">Play video</button>
+  </div>
+  <div>
+    <button id="play-video-and-transit-button">Play video and transit to another page</button>
+  </div>
+  <div>
+    <textarea id="response-textarea" placeholder="Response"></textarea>
+  </div>
+</body>
+</html>
