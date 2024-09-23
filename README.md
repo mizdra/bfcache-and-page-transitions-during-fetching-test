@@ -44,6 +44,7 @@ https://github.com/user-attachments/assets/3f560784-3407-4a45-b7a5-822acb20f237
   - Imagine a case where a fetch is being performed while rendering the React component tree, and that fetch is aborted by a page transition.
   - If the user goes back to the browser, an error screen may be displayed.
   - This is because a `TypeError` is caught in the top-level [`<Suspense>`](https://ja.react.dev/reference/react/Suspense) component of the page, and the entire page switches to the error screen.
+  - For more information, see [In the case of a React application](#in-the-case-of-a-react-application).
 - `TypeError` has no stack trace.
   - I don't know if this is a bug or not.
 - `TypeError` may be reported to error reporters such as [Sentry](https://sentry.io/welcome/).
