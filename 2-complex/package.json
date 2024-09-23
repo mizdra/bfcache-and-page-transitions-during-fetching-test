@@ -1,0 +1,30 @@
+{
+  "name": "2-complex",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "license": "CC0-1.0",
+  "scripts": {
+    "build": "remix vite:build",
+    "prepreview": "npm run build",
+    "preview": "vite preview",
+    "lint": "tsc"
+  },
+  "dependencies": {
+    "@remix-run/node": "^2.12.1",
+    "@remix-run/react": "^2.12.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swr": "^2.2.5"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.12.1",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "typescript": "^5.1.6",
+    "vite": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
