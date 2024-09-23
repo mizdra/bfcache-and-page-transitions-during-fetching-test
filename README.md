@@ -90,7 +90,7 @@ The behavior of each browser is as follows:
   - If you go back to the previous page, the page will resume after the fetch is complete or from the state where the fetch is in progress.
   - No error screen will be displayed.
 - Firefox
-  - If you go back to the previous page, the page will reload. For some reason, the b/f cache is not used.
+  - If you go back to the previous page, the page will reload. The b/f cache is not used.
   - No error screen will be displayed.
 - Safari
   - The fetch is aborted by the page transitions, and the `TypeError` is thrown.
@@ -102,19 +102,19 @@ Recordings:
 <details>
   <summary>Chrome 129.0.6668.59（Official Build） （arm64） / macOS 15.0</summary>
 
-  https://github.com/user-attachments/assets/ea5d9d8f-f25f-47f0-bae9-409c87dc6eaa
+  https://github.com/user-attachments/assets/061723fb-51b6-43e9-8c87-d9ada29c0abe
 
 </details>
 <details>
   <summary>Firefox 130.0.1 (64-bit) / macOS 15.0</summary>
 
-  https://github.com/user-attachments/assets/d9cddb44-ac98-4ecb-a75f-4be7e3e9a86d
+  https://github.com/user-attachments/assets/383d2580-e413-4c6e-8fae-f1692892ecd1
   
 </details>
 <details>
   <summary>Safari 18.0 (20619.1.26.31.6) / macOS 15.0</summary>
 
-  https://github.com/user-attachments/assets/d9ed0a48-8da5-40e2-97d4-d766905b3391
+  https://github.com/user-attachments/assets/34db8c67-24e2-4edf-9176-1dfddfb0344a
   
 </details>
 
