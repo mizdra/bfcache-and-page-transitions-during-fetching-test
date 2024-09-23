@@ -35,7 +35,12 @@
     });
     fetchResourceAndTransitButton.addEventListener('click', () => {
       fetchResource();
-      location.href = 'https://example.com';
+      location.href = 'https://example.com/';
+    });
+    window.addEventListener("pageshow", () => {
+      if (event.persisted) {
+        console.log("This page was restored from the bfcache.");
+      }
     });
   </script>
   <style>

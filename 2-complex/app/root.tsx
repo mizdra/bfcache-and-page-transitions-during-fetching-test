@@ -6,8 +6,19 @@ import {
   ScrollRestoration,
   useRouteError,
 } from "@remix-run/react";
+import { useEffect } from "react";
+
+function onPageshow(event: PageTransitionEvent) {
+  if (event.persisted) {
+    console.log("This page was restored from the bfcache.");
+  }
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    window.addEventListener("pageshow", onPageshow);
+    return () => window.removeEventListener("pageshow", onPageshow);
+  }, []);
   return (
     <html lang="en">
       <head>

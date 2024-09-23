@@ -1,34 +1,33 @@
 import type { MetaFunction } from "@remix-run/node";
 import { startTransition, useCallback, useState } from "react";
-import useSWR from "swr";
-
-const fetcher = (input: RequestInfo | URL, init?: RequestInit) =>
-  fetch(input, init).then((res) => res.json());
 
 export const meta: MetaFunction = () => {
   return [{ title: "2-complex" }];
 };
 
 export default function Index() {
+  const [isFetchStarted, setIsFetchStarted] = useState(false);
   const [showFakerResponder, setShowFakerResponder] = useState(false);
   const handleFetchResource = useCallback(() => {
+    setIsFetchStarted(true);
     startTransition(() => setShowFakerResponder(true));
   }, []);
   const handleFetchResourceAndTransit = useCallback(() => {
+    setIsFetchStarted(true);
     startTransition(() => setShowFakerResponder(true));
-    location.href = "https://example.com";
+    location.href = "https://example.com/";
   }, []);
   return (
     <div>
       <div>
-        <button onClick={handleFetchResource} disabled={showFakerResponder}>
+        <button onClick={handleFetchResource} disabled={isFetchStarted}>
           Fetch resource
         </button>
       </div>
       <div>
         <button
           onClick={handleFetchResourceAndTransit}
-          disabled={showFakerResponder}
+          disabled={isFetchStarted}
         >
           Fetch resource and transit to another page
         </button>
@@ -38,13 +37,35 @@ export default function Index() {
   );
 }
 
+const resource: { data: any, promise: null | Promise<any>, error: null | Error } = {
+  data: null,
+  promise: null,
+  error: null,
+};
+function useFetchData() {
+  if (resource.data) {
+    return resource.data;
+  } if (resource.error) {
+    throw resource.error;
+  } else if (resource.promise) {
+    throw resource.promise;
+  } else {
+    resource.promise = fetch("https://fakeresponder.com/?sleep=3000")
+      .then((res) => res.text())
+      .then((text) => {
+        resource.data = text;
+      }).catch((error) => {
+        resource.error = error;
+      })
+    throw resource.promise;
+  }
+}
+
 function FakerResponder() {
-  const { data } = useSWR("https://fakeresponder.com/?sleep=3000", fetcher, {
-    suspense: true,
-  });
+  const data = useFetchData();
   return (
     <textarea style={{ width: "40em", height: "15em" }}>
-      {JSON.stringify(data, null, 2)}
+      {data}
     </textarea>
   );
 }
