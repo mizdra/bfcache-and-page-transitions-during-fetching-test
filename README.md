@@ -73,13 +73,13 @@ You can try it below.
 ```bash
 cd 2-complex
 npm i
-npm run preview
-open http://localhost:4173/
+npm run dev
+open http://localhost:5173/
 ```
 
 Comparison steps:
 
-1. Open http://localhost:4173/ (b/f cacheable page)
+1. Open http://localhost:5173/ (b/f cacheable page)
 2. Click `Fetch resource and transit to another page` button
 3. Browser back to the previous page
 

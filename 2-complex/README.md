@@ -4,6 +4,6 @@
 
 ```shellscript
 npm i
-npm run preview
-open http://localhost:4173/
+npm run dev
+open http://localhost:5173/
 ```
