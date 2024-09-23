@@ -24,19 +24,26 @@ The behavior of each browser is as follows:
   - The fetch is aborted by the page transitions, and the `TypeError` is thrown.
   - If you go back to the previous page, the page will resume from after the `TypeError` is thrown.
 
-## Recordings
+Recordings:
 
-### Chrome 129.0.6668.59（Official Build） （arm64） / macOS 15.0
+<details>
+  <summary>Chrome 129.0.6668.59（Official Build） （arm64） / macOS 15.0</summary>
 
-https://github.com/user-attachments/assets/638a2d28-5b2e-4c1c-a79c-4317b7438d6a
+  https://github.com/user-attachments/assets/638a2d28-5b2e-4c1c-a79c-4317b7438d6a
 
-### Firefox 130.0.1 (64-bit) / macOS 15.0
+</details>
+<details>
+  <summary>Firefox 130.0.1 (64-bit) / macOS 15.0</summary>
 
-https://github.com/user-attachments/assets/bd7ffa39-2f5f-46a9-b33c-a0d48b9b0797
+  https://github.com/user-attachments/assets/bd7ffa39-2f5f-46a9-b33c-a0d48b9b0797
+  
+</details>
+<details>
+  <summary>Safari 18.0 (20619.1.26.31.6) / macOS 15.0</summary>
 
-## Safari 18.0 (20619.1.26.31.6) / macOS 15.0
-
-https://github.com/user-attachments/assets/3f560784-3407-4a45-b7a5-822acb20f237
+  https://github.com/user-attachments/assets/3f560784-3407-4a45-b7a5-822acb20f237
+  
+</details>
 
 ## Additional information
 
@@ -90,17 +97,26 @@ The behavior of each browser is as follows:
   - If you go back to the previous page, the page will resume from after the `TypeError` is thrown.
   - An error screen will be displayed.
 
-### Chrome 129.0.6668.59（Official Build） （arm64） / macOS 15.0
+Recordings:
 
-https://github.com/user-attachments/assets/ea5d9d8f-f25f-47f0-bae9-409c87dc6eaa
+<details>
+  <summary>Chrome 129.0.6668.59（Official Build） （arm64） / macOS 15.0</summary>
 
-### Firefox 130.0.1 (64-bit) / macOS 15.0
+  https://github.com/user-attachments/assets/ea5d9d8f-f25f-47f0-bae9-409c87dc6eaa
 
-https://github.com/user-attachments/assets/d9cddb44-ac98-4ecb-a75f-4be7e3e9a86d
+</details>
+<details>
+  <summary>Firefox 130.0.1 (64-bit) / macOS 15.0</summary>
 
-### Safari 18.0 (20619.1.26.31.6) / macOS 15.0
+  https://github.com/user-attachments/assets/d9cddb44-ac98-4ecb-a75f-4be7e3e9a86d
+  
+</details>
+<details>
+  <summary>Safari 18.0 (20619.1.26.31.6) / macOS 15.0</summary>
 
-https://github.com/user-attachments/assets/d9ed0a48-8da5-40e2-97d4-d766905b3391
+  https://github.com/user-attachments/assets/d9ed0a48-8da5-40e2-97d4-d766905b3391
+  
+</details>
 
 ## References
 
