@@ -121,6 +121,8 @@ Recordings:
 ## References
 
 - [fetch の中断と Back/Forward Cache からの復元で発生する奇妙な現象について - mizdra's blog](https://www.mizdra.net/entry/2023/12/15/012937)
+- [1928385 - Unstable behavior when a page that transited during fetch is restored from bfcache](https://bugzilla.mozilla.org/show_bug.cgi?id=1928385)
+- [282506 – The page is resumed from the point at which fetch is aborted](https://bugs.webkit.org/show_bug.cgi?id=282506)
 
 ## License
 
