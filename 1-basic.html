@@ -37,7 +37,7 @@
       fetchResource();
       location.href = 'https://example.com/';
     });
-    window.addEventListener("pageshow", () => {
+    window.addEventListener("pageshow", (event) => {
       if (event.persisted) {
         console.log("This page was restored from the bfcache.");
       }
